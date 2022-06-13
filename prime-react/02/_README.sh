@@ -14,3 +14,10 @@ Components
 - SideBarElement
 - CreateItemPage
 ---
+
+# MONGODB + MONGO_EXPRESS
+cd "$RESEARCH_HOME/java/mongodb/02/mymongodb/_infra/local/"
+docker-compose up -d
+# MY_MONGODB_BKEND_APP
+cd "$RESEARCH_HOME/java/mongodb/02/mymongodb"
+./gradlew clean bootRun
