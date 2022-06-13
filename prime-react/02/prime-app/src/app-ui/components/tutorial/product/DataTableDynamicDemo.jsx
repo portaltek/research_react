@@ -27,7 +27,7 @@ const DataTableDynamicDemo = () => {
         productService.getProductsSmall().then(data => setProducts(data));
     }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
-    const dynamicColumns = columns.map((col, i) => {
+    const dynamicColumns = columns.map((col, _i) => {
         return <Column key={
                 col.field
             }

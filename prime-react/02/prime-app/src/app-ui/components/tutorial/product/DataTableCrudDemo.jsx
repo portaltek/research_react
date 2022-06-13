@@ -164,7 +164,7 @@ const DataTableCrudDemo = () => {
 
             const _products = [
                 ...products,
-                ... importedData
+                ...importedData
             ];
 
             setProducts(_products);
@@ -564,6 +564,4 @@ const DataTableCrudDemo = () => {
         </div>
     );
 }
-
-
-export default DataTableCrudDemo;
+export default DataTableCrudDemo

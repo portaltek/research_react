@@ -6,7 +6,7 @@ import {Button} from 'primereact/button';
 import {Rating} from 'primereact/rating';
 import './DataTableDemo.css';
 
-const DataTableTemplatingDemo = () => {
+const DataTableTemplateDemo = () => {
     const [products, setProducts] = useState([]);
     const productService = new ProductService();
 
@@ -91,4 +91,4 @@ const DataTableTemplatingDemo = () => {
         </div>
     );
 }
-export default DataTableTemplatingDemo;
+export default DataTableTemplateDemo;

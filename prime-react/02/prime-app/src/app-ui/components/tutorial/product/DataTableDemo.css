@@ -23,7 +23,7 @@
 
 
 
-/* DataTableDemo.css */
+/* CRUD */
 
 .demo-data-table .table-header {
     display: flex;
@@ -36,7 +36,7 @@
     }
 }
 .demo-data-table .product-image {
-    width: 100px;
+    width: 40px;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 .demo-data-table .p-dialog .product-image {
