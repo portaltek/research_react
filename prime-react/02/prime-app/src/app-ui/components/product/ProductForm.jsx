@@ -1,5 +1,5 @@
 import React, {useContext, useState, useEffect} from "react";
-import {ProductContext} from "../contexts/ProductContext";
+import {ProductContext} from "../../contexts/product/ProductContext";
 import {Dialog} from "primereact/dialog";
 import {Button} from "primereact/button";
 import {InputText} from "primereact/inputtext";
@@ -24,6 +24,8 @@ const ProductForm = (props) => {
         if (editProduct) 
             setProductData(editProduct);
         
+
+
     }, [editProduct]);
 
     const updateField = (data, field) => {
@@ -53,11 +55,18 @@ const ProductForm = (props) => {
         setIsVisible(false);
     };
 
+    const closeProductForm = () => {
+        setProductData(initialProductState);
+        setIsVisible(false);
+    };
+
     const dialogFooter = (<div className="ui-dialog-buttonpane p-clearfix">
-        <Button label="Delete" icon="pi pi-times"
+        <Button label="Delete" icon="pi pi-trash" className="p-button-danger"
             onClick={_deleteProduct}/>
-        <Button label="Save" icon="pi pi-check"
+        <Button label="Save" icon="pi pi-cloud-upload" className="p-button-success"
             onClick={saveProduct}/>
+        <Button label="Close" icon="pi pi-times" className="p-button-info"
+            onClick={closeProductForm}/>
     </div>);
 
     const clearSelected = () => {

@@ -3,7 +3,7 @@ import {Panel} from "primereact/panel";
 import {DataTable} from "primereact/datatable";
 import {Column} from "primereact/column";
 import {Button} from "primereact/button";
-import {ProductContext} from "../contexts/ProductContext";
+import {ProductContext} from "../../contexts/product/ProductContext";
 import ProductForm from "./ProductForm";
 
 const ProductList = () => {
@@ -41,10 +41,9 @@ const ProductList = () => {
                     (e) => saveProduct(e.value._id)
                 }
                 footer={footer}>
-                <Column field="_id" header="Id"/>
+                <Column field="id" header="Id"/>
                 <Column field="name" header="Nombre"/>
                 <Column field="price" header="Precio"/>
-                <Column field="expiry_date" header="Fecha de Caducidad"/>
             </DataTable>
         </Panel>
         <ProductForm isVisible={isVisible}

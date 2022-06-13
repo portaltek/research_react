@@ -1,5 +1,5 @@
 import React, {createContext, useEffect, useState} from "react";
-import {ProductService} from "../../spi/my-rest-client/ProductService";
+import {ProductService} from "../../../spi/my-rest-client/ProductService";
 
 export const ProductContext = createContext();
 
