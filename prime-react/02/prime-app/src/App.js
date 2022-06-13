@@ -1,12 +1,17 @@
-import logo from "./logo.svg";
 import "./App.css";
+import React from "react";
+//import "primereact/resources/themes/lara-dark-blue";
+import "primereact/resources/primereact.min.css";
+import "primeicons/primeicons.css";
+import ProductContextProvider from "./api/contexts/ProductContext";
+import ProductList from "./api/components/ProductList";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-      </header>
+      <ProductContextProvider>
+        <ProductList />
+      </ProductContextProvider>
     </div>
   );
 }

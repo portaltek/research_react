@@ -4,9 +4,10 @@ import {ProductService} from "../../spi/my-rest-client/ProductService";
 export const ProductContext = createContext();
 
 const ProductContextProvider = (props) => {
-
     const productService = new ProductService();
+
     const [products, setProducts] = useState([]);
+
     const [editProduct, setEditProduct] = useState(null);
 
     useEffect(() => {
@@ -45,11 +46,9 @@ const ProductContextProvider = (props) => {
             editProduct,
             products
         }
-    }> {" "}
-        {
+    }> {
         props.children
-    }
-        {" "} </ProductContext.Provider>);
+    } </ProductContext.Provider>);
 };
 
 export default ProductContextProvider;

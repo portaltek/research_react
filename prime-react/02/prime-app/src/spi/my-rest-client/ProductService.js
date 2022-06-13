@@ -1,17 +1,13 @@
 import axios from "axios";
 
 export class ProductService {
-  baseUrl = "http://localhost:8080-api/products/";
+  baseUrl = "http://localhost:8080/products/";
 
   create(product) {
     return axios.post(this.baseUrl, product).then((res) => res.data);
   }
 
-  findAll() {
-    return axios.get(this.baseUrl).then((res) => res.data);
-  }
-
-  findOneById() {
+  readAll() {
     return axios.get(this.baseUrl).then((res) => res.data);
   }
 
