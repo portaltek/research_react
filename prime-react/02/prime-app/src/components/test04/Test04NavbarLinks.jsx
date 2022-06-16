@@ -5,17 +5,21 @@ export const Test04NavbarLinks = () => {
 
     return (
         <div>
-            <div>NavBar</div>
+            <h3>NavBar
+            </h3>
             <nav>
-                <Link to="/">Test04CompA</Link>
+                <Link to="/public">Public</Link>
                 {"  "}|{"  "}
-                <Link to="/b">Test04CompB</Link>
+                <Link to="/login">Login</Link>
+            </nav>
+            <nav>
+                <Link to="/home">Home</Link>
                 {"  "}|{"  "}
-                <Link to="/c">Test04CompC</Link>
+                <Link to="/params">Params</Link>
                 {"  "}|{"  "}
-                <Link to="/d">Test04CompD</Link>
+                <Link to="/params/1">Params/1</Link>
                 {"  "}|{"  "}
-                <Link to="/d/1">/d/1</Link>
+                <Link to="/logout">Logout</Link>
             </nav>
         </div>
     );

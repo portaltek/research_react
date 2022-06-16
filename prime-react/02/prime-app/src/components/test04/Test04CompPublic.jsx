@@ -1,9 +1,10 @@
 import React from 'react'
 
-export const Test04CompA = () => {
+
+export const Test04CompPublic = () => {
     return (
         <div>
-            <div>Test04CompA</div>
+            <h2>PUBLIC</h2>
         </div>
     )
 }

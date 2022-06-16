@@ -3,17 +3,17 @@ import React, {createContext, useState} from "react";
 export const Test04Ctx = createContext();
 
 const Test04CtxProvider = (props) => {
-    const [data, setData] = useState("from A");
+    const [test04Data, setTest04Data] = useState({"isLoggedIn": false});
 
     const myFunction = (d) => {
-        console.log("old data: ", data);
+        console.log("old data: ", test04Data);
         console.log("new data: ", d);
-        setData(d);
+        setTest04Data(d);
     };
 
     return (
         <Test04Ctx.Provider value={
-            {myFunction, data, setData}
+            {myFunction, test04Data, setTest04Data}
         }>
             {
             props.children

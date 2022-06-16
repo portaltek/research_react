@@ -1,28 +1,36 @@
 import React from "react";
 import {Routes, Route} from "react-router-dom";
-import {Test04CompA} from './Test04CompA';
-import {Test04CompB} from './Test04CompB';
-import {Test04CompC} from './Test04CompC';
-import {Test04CompD} from './Test04CompD';
-import {Test04CompError} from './Test04CompError';
+import {Test04CompError404} from './Test04CompError404';
+import {Test04CompParams} from "./Test04CompParams";
+import {Test04CompHome} from "./Test04CompHome";
+import {Test04CompPublic} from "./Test04CompPublic";
+import {Test04CompLogin} from "./Test04CompLogin";
+import {Test04CompLogout} from "./Test04CompLogout";
+import {Test04NavbarAuth} from "./Test04NavbarAuth";
+
 
 export const Test04NavbarRoutes = () => {
-
     return (
         <div>
             <Routes>
-                <Route path="/"
-                    element={<Test04CompA/>}></Route>
-                <Route path="/b"
-                    element={<Test04CompB/>}></Route>
-                <Route path="/c"
-                    element={<Test04CompC/>}></Route>
-                <Route path="/d"
-                    element={<Test04CompD/>}></Route>
-                <Route path="/d/:id"
-                    element={<Test04CompD/>}></Route>
+                <Route path="/public"
+                    element={<Test04CompPublic/>}/>
+                <Route path="/login"
+                    element={<Test04CompLogin/>}/>
+
+                <Route element={<Test04NavbarAuth/>}>
+                    <Route path="/home"
+                        element={<Test04CompHome/>}></Route>
+                    <Route path="/params"
+                        element={<Test04CompParams/>}></Route>
+                    <Route path="/params/:id"
+                        element={<Test04CompParams/>}></Route>
+                    <Route path="/logout"
+                        element={<Test04CompLogout/>}></Route>
+                </Route>
+
                 <Route path="*"
-                    element={<Test04CompError/>}></Route>
+                    element={<Test04CompError404/>}></Route>
             </Routes>
         </div>
     );

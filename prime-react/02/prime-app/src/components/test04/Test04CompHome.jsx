@@ -1,15 +1,14 @@
 import React from 'react'
 import {useNavigate} from 'react-router-dom'
 
-export const Test04CompB = () => {
+export const Test04CompHome = () => {
     let nav = useNavigate()
     return (
         <div>
-            <div>Test04CompB</div>
+            <h2>HOME</h2>
             <button onClick={
-                () => nav("/c")
-            }>Go to C</button>
-
+                () => nav("/params/3")
+            }>GO TO: /params/3</button>
         </div>
     )
 }
