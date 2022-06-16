@@ -6,7 +6,7 @@ import {Test04CompC} from './Test04CompC';
 import {Test04CompD} from './Test04CompD';
 import {Test04CompError} from './Test04CompError';
 
-export const Test04CompNavbarRoutes = () => {
+export const Test04NavbarRoutes = () => {
 
     return (
         <div>

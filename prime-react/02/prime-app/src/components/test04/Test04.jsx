@@ -1,8 +1,8 @@
 import React from 'react'
 import {BrowserRouter} from "react-router-dom";
 
-import {Test04CompNavbar} from './Test04NavbarLinks';
-import {Test04CompNavbarRoutes} from './Test04NavbarRoutes';
+import {Test04NavbarLinks} from './Test04NavbarLinks';
+import {Test04NavbarRoutes} from './Test04NavbarRoutes';
 
 import Test04CtxProvider from './Test04Ctx'
 
@@ -12,8 +12,8 @@ export const Test04 = () => {
         <Test04CtxProvider>
             <div>Test04</div>
             <BrowserRouter>
-                <Test04CompNavbar/>
-                <Test04CompNavbarRoutes/>
+                <Test04NavbarLinks/>
+                <Test04NavbarRoutes/>
             </BrowserRouter>
         </Test04CtxProvider>
     )
