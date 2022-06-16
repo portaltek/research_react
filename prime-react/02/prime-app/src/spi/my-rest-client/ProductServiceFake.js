@@ -8,7 +8,6 @@ export class ProductServiceFake {
   }
 
   readAll() {
-    //return axios.get(this.baseUrl).then((res) => res.data);
     return fetch("data/products.json")
       .then((res) => res.json())
       .then((d) => d.data);
