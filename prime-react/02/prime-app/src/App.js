@@ -4,12 +4,12 @@ import React from "react";
 import "primereact/resources/themes/arya-blue/theme.css";
 import "primereact/resources/primereact.min.css";
 import "primeicons/primeicons.css";
-import { TestContextA } from "./components/test03/TestContextA";
+import { Test04 } from "./components/test04/Test04";
 
 function App() {
   return (
     <div className="App">
-      <TestContextA />
+      <Test04 />
     </div>
   );
 }

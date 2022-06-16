@@ -4,8 +4,8 @@
 cd $RESEARCH_HOME/reactjs/prime-react/02
 npx create-react-app prime-app; cd prime-app; npm start;
 npm install primereact primeicons --save
-npm install classnames react-transition-group axios
-
+npm install classnames react-transition-group axios 
+npm i react-router-dom #Nav / Route&Switch pages
 
 # MONGODB + MONGO_EXPRESS
 cd "$RESEARCH_HOME/java/mongodb/02/mymongodb/_infra/local/"
@@ -20,7 +20,7 @@ cd $RESEARCH_HOME/reactjs/prime-react/02/prime-app
 npm start
 
 
-
+/jsx/pages/
 /product
 Product
 ProductEmptyObject
