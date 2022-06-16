@@ -16,4 +16,13 @@ export class ProductService {
       .then((res) => res.json())
       .then((d) => d.data);
   }
+
+  getMenubar() {
+    return fetch("data/menubar.json")
+      .then((res) => res.json())
+      .then((d) => {
+        console.log(JSON.stringify(d));
+        return d.data;
+      });
+  }
 }

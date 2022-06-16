@@ -19,3 +19,20 @@ cd "$RESEARCH_HOME/java/mongodb/02/mymongodb"
 cd $RESEARCH_HOME/reactjs/prime-react/02/prime-app
 npm start
 
+
+
+/product
+Product
+ProductEmptyObject
+ProductPage
+ProductScreen
+ProductTable
+
+/product/form
+CreateProductForm
+DeleteProductForm
+SearchProductForm
+UpdateProductForm
+
+
+Product
