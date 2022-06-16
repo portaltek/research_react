@@ -1,10 +1,10 @@
 import React, {createContext, useEffect, useState} from "react";
-import {ProductService} from "../../spi/my-rest-client/ProductService";
+import {ProductServiceFake} from "../../spi/my-rest-client/ProductServiceFake";
 
 export const ProductContext = createContext();
 
 const ProductContextProvider = (props) => {
-    const productService = new ProductService();
+    const productService = new ProductServiceFake();
 
     const [products, setProducts] = useState([]);
 
@@ -38,18 +38,21 @@ const ProductContextProvider = (props) => {
         setEditProduct(null);
     };
 
-    return (<ProductContext.Provider value={
-        {
-            createProduct,
-            deleteProduct,
-            findProduct,
-            updateProduct,
-            editProduct,
-            products
-        }
-    }> {
-        props.children
-    } </ProductContext.Provider>);
+    return (
+        <ProductContext.Provider value={
+            {
+                createProduct,
+                deleteProduct,
+                findProduct,
+                updateProduct,
+                editProduct,
+                products
+            }
+        }>
+            {
+            props.children
+        } </ProductContext.Provider>
+    );
 };
 
 export default ProductContextProvider;
