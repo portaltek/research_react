@@ -1,9 +1,14 @@
 import React from 'react'
-import {Test05Login} from './Test05Login'
-import {Test05Register} from './Test05Register'
+
 import './Test05.css'
+import {Test05Register} from './Test05Register'
+import {Test05SpiServiceLocal} from './Test05SpiServiceLocal'
+
 
 export const Test05 = () => {
+    const service = new Test05SpiServiceLocal();
+    service.createFile()
+
     return (
         <div>
             <h4>Test05</h4>
