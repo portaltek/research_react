@@ -1,14 +1,14 @@
 import "./App.css";
 
-import { Feed } from "./pages/Feed";
-import { Sidebar } from "./pages/Sidebar";
-import { Rightbar } from "./pages/Rightbar";
 import { Box, Stack } from "@mui/material";
-import { Navbar } from "./pages/navbar/Navbar";
+import { Sidebar } from "./pages/common/Sidebar";
+import { Rightbar } from "./pages/common/Rightbar";
+import { Feed } from "./pages/common/feed/Feed";
+import { Navbar } from "./pages/common/navbar/Navbar";
 
 function App() {
   return (
-    <Box sx={{ backgroundColor: "darkgrey" }}>
+    <Box sx={{ backgroundColor: "lightgrey" }}>
       <Navbar></Navbar>
       <Stack direction="row" spacing={2} justifyContent="space-between">
         <Sidebar></Sidebar>
