@@ -11,3 +11,7 @@ cd "$RESEARCH_HOME/reactjs/prime-react/03/$APP_NAME"
 
 npm i @mui/material @emotion/react @emotion/styled @mui/icons-material
 
+
+
+cp java  /Users/rpineda/_RESEARCH/java
+cp java  /Users/rpineda/_RESEARCH/java
