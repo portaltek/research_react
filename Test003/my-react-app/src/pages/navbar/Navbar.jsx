@@ -1,6 +1,14 @@
-import React from "react";
-import { AppBar, Box, Toolbar, styled, Typography } from "@mui/material";
+import React, { useState } from "react";
+import {
+  AppBar,
+  Box,
+  Toolbar,
+  styled,
+  Typography,
+  InputBase,
+} from "@mui/material";
 import { Pets } from "@mui/icons-material";
+import { NavbarIcons } from "./NavbarIcons";
 
 const StyledToolbar = styled(Toolbar)({
   display: "flex",
@@ -8,11 +16,13 @@ const StyledToolbar = styled(Toolbar)({
 });
 const Search = styled("div")(({ theme }) => ({
   backgroundColor: "white",
+  padding: "0 10px",
+  borderRadius: theme.shape.borderRadius,
+  width: "40%",
 }));
-const Icons = styled(Box)(({ theme }) => ({
-  backgroundColor: "white",
-}));
+
 export const Navbar = () => {
+  const [open, setOpen] = useState(false);
   return (
     <Box>
       <AppBar position="sticky">
@@ -30,8 +40,10 @@ export const Navbar = () => {
               display: { xs: "block", sm: "none" },
             }}
           />
-          <Icons>Icons</Icons>
-          <Search>Search</Search>
+          <Search>
+            <InputBase placeholder="search..."></InputBase>
+          </Search>
+          <NavbarIcons value={{ open, setOpen }}></NavbarIcons>
         </StyledToolbar>
       </AppBar>
     </Box>
