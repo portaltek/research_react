@@ -26,7 +26,6 @@ export const Sidebar = () => {
         display: { xs: "none", sm: "block" },
       }}
     >
-      {" "}
       <Box position="fixed">
         <List>
           <ListItem disablePadding>

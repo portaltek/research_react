@@ -5,6 +5,7 @@ import { Sidebar } from "./pages/common/Sidebar";
 import { Rightbar } from "./pages/common/Rightbar";
 import { Feed } from "./pages/common/feed/Feed";
 import { Navbar } from "./pages/common/navbar/Navbar";
+import { CreatePostButton } from "./pages/common/post/CreatePostButton";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Sidebar></Sidebar>
         <Feed></Feed>
         <Rightbar></Rightbar>
+        <CreatePostButton />
       </Stack>
     </Box>
   );

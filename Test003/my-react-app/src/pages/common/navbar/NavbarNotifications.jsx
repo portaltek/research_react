@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Badge } from "@mui/material";
+import { Badge } from "@mui/material";
 import { Mail, Notifications } from "@mui/icons-material";
 import { NavbarBoxSM } from "./NavbarStyled";
 
