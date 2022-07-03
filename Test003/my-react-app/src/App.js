@@ -8,7 +8,7 @@ import { Navbar } from "./pages/navbar/Navbar";
 
 function App() {
   return (
-    <Box sx={{ backgroundColor: "lightgrey" }}>
+    <Box sx={{ backgroundColor: "darkgrey" }}>
       <Navbar></Navbar>
       <Stack direction="row" spacing={2} justifyContent="space-between">
         <Sidebar></Sidebar>
