@@ -6,7 +6,7 @@ import { AppContext } from "../AppContext";
 
 const defaultDrawerWidth = 200; //60
 
-export const Sidebar = ({ displayDrawer, themeMode, setThemeMode }) => {
+export const Sidebar = ({ themeMode, setThemeMode }) => {
   const { config } = useContext(AppContext);
   const drawerWidth = config.sidebar.display ? defaultDrawerWidth : 0;
 
@@ -25,11 +25,7 @@ export const Sidebar = ({ displayDrawer, themeMode, setThemeMode }) => {
         }}
       >
         <Toolbar />
-        <SidebarList
-          themeMode={themeMode}
-          setThemeMode={setThemeMode}
-          displayDrawer={displayDrawer}
-        />
+        <SidebarList themeMode={themeMode} setThemeMode={setThemeMode} />
       </Drawer>
     </Box>
   );

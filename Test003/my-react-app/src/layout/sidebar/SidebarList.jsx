@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useContext } from "react";
 import {
   ListItem,
   ListItemButton,
@@ -9,8 +9,17 @@ import {
 } from "@mui/material";
 import { Home, Settings, ModeNight } from "@mui/icons-material";
 import MailIcon from "@mui/icons-material/Mail";
+import { AppContext } from "../AppContext";
 
-export default function SidebarList({ themeMode, setThemeMode }) {
+export default function SidebarList() {
+  const { config, setConfig } = useContext(AppContext);
+  const toggleThemeMode = () => {
+    config.theme.mode = config.theme.mode === "light" ? "dark" : "light";
+    setConfig({
+      ...config,
+    });
+  };
+
   return (
     <List>
       <ListItem disablePadding>
@@ -34,11 +43,7 @@ export default function SidebarList({ themeMode, setThemeMode }) {
           <ListItemIcon>
             <ModeNight></ModeNight>
           </ListItemIcon>
-          <Switch
-            onChange={() =>
-              setThemeMode(themeMode === "light" ? "dark" : "light")
-            }
-          />
+          <Switch onChange={() => toggleThemeMode()} />
         </ListItemButton>
       </ListItem>
       {["Inbox", "Starred", "Send email", "Drafts"].map((text, _index) => (

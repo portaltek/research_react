@@ -1,29 +1,22 @@
 import { Box, Stack, createTheme, ThemeProvider } from "@mui/material";
 import { Navbar } from "./navbar/Navbar";
 import { Sidebar } from "./sidebar/Sidebar";
-import { useState } from "react";
+import { useContext } from "react";
+import { AppContext } from "./AppContext";
 
 export const AppLayout = ({ children }) => {
-  const [themeMode, setThemeMode] = useState("light");
-  const [displayDrawer, setDisplayDrawer] = useState(true);
+  const { config } = useContext(AppContext);
   const darkTheme = createTheme({
     palette: {
-      mode: themeMode,
+      mode: config.theme.mode,
     },
   });
   return (
     <ThemeProvider theme={darkTheme}>
       <Box bgcolor={"background.default"} color={"text.primary"}>
-        <Navbar
-          setDisplayDrawer={setDisplayDrawer}
-          displayDrawer={displayDrawer}
-        />
+        <Navbar />
         <Stack direction="row" spacing={2} justifyContent="space-between">
-          <Sidebar
-            themeMode={themeMode}
-            setThemeMode={setThemeMode}
-            displayDrawer={displayDrawer}
-          />
+          <Sidebar />
           <main>{children}</main>
         </Stack>
       </Box>

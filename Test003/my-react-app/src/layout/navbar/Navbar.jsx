@@ -15,7 +15,12 @@ import { AppContext } from "../AppContext";
 export const Navbar = () => {
   const [openProfileMenu, setOpenProfileMenu] = useState(false);
   const { config, setConfig } = useContext(AppContext);
-
+  const toggleDisplaySidebar = () => {
+    config.sidebar.display = !config.sidebar.display;
+    setConfig({
+      ...config,
+    });
+  };
   return (
     <AppBar
       position="fixed"
@@ -23,14 +28,7 @@ export const Navbar = () => {
     >
       <NavbarStyledToolbar>
         <NavbarBox>
-          <School
-            onClick={() => {
-              config.sidebar.display = !config.sidebar.display;
-              setConfig({
-                ...config,
-              });
-            }}
-          />
+          <School onClick={() => toggleDisplaySidebar()} />
           <NavbarBoxSM>
             <Typography variant="h6">MUI</Typography>
           </NavbarBoxSM>
