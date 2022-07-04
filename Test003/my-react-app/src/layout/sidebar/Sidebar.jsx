@@ -6,7 +6,7 @@ import SidebarList from "./SidebarList";
 const defaultDrawerWidth = 200;
 //const iconOnlyDrawerWidth = 60;
 
-export default function Sidebar({ displayDrawer, themeMode, setThemeMode }) {
+export const Sidebar = ({ displayDrawer, themeMode, setThemeMode }) => {
   const drawerWidth = displayDrawer ? defaultDrawerWidth : 0;
   return (
     <Box flex={1} p={2} sx={{ display: "flex" }}>
@@ -31,4 +31,4 @@ export default function Sidebar({ displayDrawer, themeMode, setThemeMode }) {
       </Drawer>
     </Box>
   );
-}
+};
