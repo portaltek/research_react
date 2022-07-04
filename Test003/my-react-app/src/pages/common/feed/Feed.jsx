@@ -8,8 +8,6 @@ export const Feed = () => {
     <Box flex={4} p={2}>
       <FeedCard />
       <FeedCard />
-      <FeedCard />
-      <FeedCard />
     </Box>
   );
 };

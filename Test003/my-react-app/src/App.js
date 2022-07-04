@@ -9,31 +9,36 @@ import { Route, Routes, BrowserRouter } from "react-router-dom";
 import { Page0 } from "./pages/page1/Page0";
 import { Page1 } from "./pages/page1/Page1";
 import { Page2 } from "./pages/page1/Page2";
-import { SideDrawer } from "./pages/common/SideDrawer";
+import ClippedDrawer from "./pages/common/drawer/ClippedDrawer";
 
 function App() {
-  const [mode, setMode] = useState("light");
-
+  const [themeMode, setThemeMode] = useState("light");
+  const [displayDrawer, setDisplayDrawer] = useState(true);
   const darkTheme = createTheme({
     palette: {
-      mode: mode,
+      mode: themeMode,
     },
   });
   return (
     <BrowserRouter>
       <ThemeProvider theme={darkTheme}>
         <Box bgcolor={"background.default"} color={"text.primary"}>
-          <Navbar />
+          <Navbar
+            setDisplayDrawer={setDisplayDrawer}
+            displayDrawer={displayDrawer}
+          />
           <Stack direction="row" spacing={2} justifyContent="space-between">
-            {/* <Sidebar setMode={setMode} mode={mode} /> */}
-            <SideDrawer setMode={setMode} mode={mode} />
+            <ClippedDrawer
+              themeMode={themeMode}
+              setThemeMode={setThemeMode}
+              displayDrawer={displayDrawer}
+            />
             <Routes>
               <Route path="/" element={<Feed />} />
               <Route path="/Page0" element={<Page0 />} />
               <Route path="/Page1" element={<Page1 />} />
               <Route path="/Page2" element={<Page2 />} />
             </Routes>
-
             <CreatePostButton />
           </Stack>
         </Box>

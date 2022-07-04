@@ -11,13 +11,20 @@ import {
 import { NavbarNotifications } from "./NavbarNotifications";
 import { NavbarUserProfile } from "./NavbarUserProfile";
 
-export const Navbar = () => {
+export const Navbar = ({ displayDrawer, setDisplayDrawer }) => {
   const [openProfileMenu, setOpenProfileMenu] = useState(false);
   return (
-    <AppBar position="sticky">
+    <AppBar
+      position="fixed"
+      sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}
+    >
       <NavbarStyledToolbar>
         <NavbarBox>
-          <School />
+          <School
+            onClick={() => {
+              setDisplayDrawer(!displayDrawer);
+            }}
+          />
           <NavbarBoxSM>
             <Typography variant="h6">MUI</Typography>
           </NavbarBoxSM>
