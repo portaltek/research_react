@@ -15,7 +15,7 @@ export const AppContextProvider = ({ children }) => {
   const [config, setConfig] = useState(defaultConfig);
   const darkTheme = createTheme({
     palette: {
-      mode: config.sidebar.display,
+      mode: config.theme.mode,
     },
   });
   return (

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { AppBar, Typography, InputBase } from "@mui/material";
 import { School } from "@mui/icons-material";
 
@@ -10,9 +10,12 @@ import {
 } from "./NavbarStyled";
 import { NavbarNotifications } from "./NavbarNotifications";
 import { NavbarUserProfile } from "./NavbarUserProfile";
+import { AppContext } from "../AppContext";
 
-export const Navbar = ({ displayDrawer, setDisplayDrawer }) => {
+export const Navbar = () => {
   const [openProfileMenu, setOpenProfileMenu] = useState(false);
+  const { config, setConfig } = useContext(AppContext);
+
   return (
     <AppBar
       position="fixed"
@@ -22,7 +25,13 @@ export const Navbar = ({ displayDrawer, setDisplayDrawer }) => {
         <NavbarBox>
           <School
             onClick={() => {
-              setDisplayDrawer(!displayDrawer);
+              const { sidebar } = config;
+              sidebar.display = !sidebar.display;
+
+              setConfig({
+                ...config,
+                sidebar,
+              });
             }}
           />
           <NavbarBoxSM>

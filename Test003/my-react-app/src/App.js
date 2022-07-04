@@ -5,6 +5,7 @@ import { BrowserRouter } from "react-router-dom";
 
 import { AppLayout } from "./layout/AppLayout";
 import { AppPages } from "./pages/AppPages";
+import { AppContextProvider } from "./layout/AppContext";
 
 // TODO: Add AppContext
 // TODO: Add DataTable CRUD Template
@@ -12,11 +13,13 @@ import { AppPages } from "./pages/AppPages";
 
 function App() {
   return (
-    <BrowserRouter>
-      <AppLayout>
-        <AppPages />
-      </AppLayout>
-    </BrowserRouter>
+    <AppContextProvider>
+      <BrowserRouter>
+        <AppLayout>
+          <AppPages />
+        </AppLayout>
+      </BrowserRouter>
+    </AppContextProvider>
   );
 }
 export default App;
