@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import "./App.css";
 
 import { Box, Stack, createTheme, ThemeProvider } from "@mui/material";
@@ -9,8 +10,16 @@ import { Route, Routes, BrowserRouter } from "react-router-dom";
 import { Page0 } from "./pages/page1/Page0";
 import { Page1 } from "./pages/page1/Page1";
 import { Page2 } from "./pages/page1/Page2";
-import ClippedDrawer from "./pages/common/drawer/ClippedDrawer";
+import Sidebar from "./pages/common/sidebar/Sidebar";
 
+// TODO: Add AppContext
+// TODO: Add DataTable CRUD Template
+// TODO: LocalStore common user Stuff such theme.
+const appSettings = {
+  theme: {
+    mode: "light",
+  },
+};
 function App() {
   const [themeMode, setThemeMode] = useState("light");
   const [displayDrawer, setDisplayDrawer] = useState(true);
@@ -28,7 +37,7 @@ function App() {
             displayDrawer={displayDrawer}
           />
           <Stack direction="row" spacing={2} justifyContent="space-between">
-            <ClippedDrawer
+            <Sidebar
               themeMode={themeMode}
               setThemeMode={setThemeMode}
               displayDrawer={displayDrawer}
