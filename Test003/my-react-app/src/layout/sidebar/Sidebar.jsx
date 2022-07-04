@@ -3,8 +3,7 @@ import { Box, Toolbar, Drawer, CssBaseline } from "@mui/material";
 
 import SidebarList from "./SidebarList";
 
-const defaultDrawerWidth = 200;
-//const iconOnlyDrawerWidth = 60;
+const defaultDrawerWidth = 200; //60
 
 export const Sidebar = ({ displayDrawer, themeMode, setThemeMode }) => {
   const drawerWidth = displayDrawer ? defaultDrawerWidth : 0;

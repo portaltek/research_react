@@ -10,11 +10,7 @@ import {
 import { Home, Settings, ModeNight } from "@mui/icons-material";
 import MailIcon from "@mui/icons-material/Mail";
 
-export default function SidebarList({
-  displayDrawer,
-  themeMode,
-  setThemeMode,
-}) {
+export default function SidebarList({ themeMode, setThemeMode }) {
   return (
     <List>
       <ListItem disablePadding>
@@ -51,10 +47,7 @@ export default function SidebarList({
             <ListItemIcon>
               <MailIcon />
             </ListItemIcon>
-            <ListItemText
-              primary={text}
-              sx={{ opacity: displayDrawer ? 1 : 0 }}
-            />
+            <ListItemText primary={text} />
           </ListItemButton>
         </ListItem>
       ))}
