@@ -10,7 +10,6 @@ import {
 } from "@mui/material";
 import {
   AccountBox,
-  Android,
   ModeNight,
   Home,
   School,
@@ -41,7 +40,7 @@ export const Sidebar = ({ mode, setMode }) => {
               <ListItemIcon>
                 <Settings></Settings>
               </ListItemIcon>
-              <ListItemText primary="Settings"></ListItemText>
+              <ListItemText primary="Page0"></ListItemText>
             </ListItemButton>
           </ListItem>
           <ListItem disablePadding>
@@ -49,7 +48,7 @@ export const Sidebar = ({ mode, setMode }) => {
               <ListItemIcon>
                 <School></School>
               </ListItemIcon>
-              <ListItemText primary="School"></ListItemText>
+              <ListItemText primary="Page1"></ListItemText>
             </ListItemButton>
           </ListItem>
           <ListItem disablePadding>
@@ -57,15 +56,7 @@ export const Sidebar = ({ mode, setMode }) => {
               <ListItemIcon>
                 <AccountBox></AccountBox>
               </ListItemIcon>
-              <ListItemText primary="AccountBox"></ListItemText>
-            </ListItemButton>
-          </ListItem>
-          <ListItem disablePadding>
-            <ListItemButton component="a" href="#home">
-              <ListItemIcon>
-                <Android></Android>
-              </ListItemIcon>
-              <ListItemText primary="Android"></ListItemText>
+              <ListItemText primary="Page2"></ListItemText>
             </ListItemButton>
           </ListItem>
           <ListItem disablePadding>
