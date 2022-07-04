@@ -29,7 +29,7 @@ export const Sidebar = ({ mode, setMode }) => {
       <Box position="fixed">
         <List>
           <ListItem disablePadding>
-            <ListItemButton component="a" href="#home">
+            <ListItemButton component="a" href="/">
               <ListItemIcon>
                 <Home></Home>
               </ListItemIcon>
@@ -37,7 +37,7 @@ export const Sidebar = ({ mode, setMode }) => {
             </ListItemButton>
           </ListItem>
           <ListItem disablePadding>
-            <ListItemButton component="a" href="#home">
+            <ListItemButton component="a" href="/Page0">
               <ListItemIcon>
                 <Settings></Settings>
               </ListItemIcon>
@@ -45,7 +45,7 @@ export const Sidebar = ({ mode, setMode }) => {
             </ListItemButton>
           </ListItem>
           <ListItem disablePadding>
-            <ListItemButton component="a" href="#home">
+            <ListItemButton component="a" href="/Page1">
               <ListItemIcon>
                 <School></School>
               </ListItemIcon>
@@ -53,7 +53,7 @@ export const Sidebar = ({ mode, setMode }) => {
             </ListItemButton>
           </ListItem>
           <ListItem disablePadding>
-            <ListItemButton component="a" href="#home">
+            <ListItemButton component="a" href="/Page2">
               <ListItemIcon>
                 <AccountBox></AccountBox>
               </ListItemIcon>
