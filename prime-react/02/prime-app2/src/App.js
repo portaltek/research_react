@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./App.css";
 import React, { useRef, useState } from "react";
 import { InputText } from "primereact/inputtext";

@@ -7,9 +7,8 @@ import { AppContext } from "../AppContext";
 const defaultDrawerWidth = 200; //60
 
 export const Sidebar = ({ displayDrawer, themeMode, setThemeMode }) => {
-  const { config, setConfig } = useContext(AppContext);
+  const { config } = useContext(AppContext);
   const drawerWidth = config.sidebar.display ? defaultDrawerWidth : 0;
-  //const drawerWidth = displayDrawer ? defaultDrawerWidth : 0;
 
   return (
     <Box flex={1} p={2} sx={{ display: "flex" }}>

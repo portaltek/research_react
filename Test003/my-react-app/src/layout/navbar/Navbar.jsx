@@ -25,12 +25,9 @@ export const Navbar = () => {
         <NavbarBox>
           <School
             onClick={() => {
-              const { sidebar } = config;
-              sidebar.display = !sidebar.display;
-
+              config.sidebar.display = !config.sidebar.display;
               setConfig({
                 ...config,
-                sidebar,
               });
             }}
           />
