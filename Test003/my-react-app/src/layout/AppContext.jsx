@@ -3,7 +3,7 @@ import { createContext, useState } from "react";
 export const AppContext = createContext({});
 const defaultConfig = {
   theme: {
-    mode: "light",
+    mode: "dark",
   },
   sidebar: {
     display: true,

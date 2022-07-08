@@ -13,5 +13,9 @@ cd "$RESEARCH_HOME/reactjs/Test003/$APP_NAME"
 
 npm i @mui/material @emotion/react @emotion/styled @mui/icons-material react-router-dom
 
-Test003/_README.sh
-/Users/rpineda/_RESEARCH/reactjs/Test003/_README.sh
+# TODO: 
+# Login, use local store and auto-logout warning.
+# Master-Detail crud.
+# Unit Test and Light Component Test.
+# Dynamic side menu options rendering.
+# 
