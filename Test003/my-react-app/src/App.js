@@ -15,12 +15,12 @@ function App() {
       <BrowserRouter>
         <AppLayout>
           <Stack direction="row" spacing={2} justifyContent="space-between">
-            <Box flex={1} p={1} sx={{ display: "flex" }}>
-              <Sidebar />
-            </Box>
-            <Box flex={6} p={1}>
-              <AppPages />
-            </Box>
+            {/* <Box flex={1} p={1} sx={{ display: "flex" }}> */}
+            <Sidebar />
+            {/* </Box> */}
+            {/* <Box flex={6} p={1}> */}
+            <AppPages />
+            {/* </Box> */}
           </Stack>
         </AppLayout>
       </BrowserRouter>
