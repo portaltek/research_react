@@ -17,15 +17,23 @@ const rows = [
   createData("Ice cream sandwich", 237, 9.0, 37, 4.3),
   createData("Eclair", 262, 16.0, 24, 6.0),
   createData("Cupcake", 305, 3.7, 67, 4.3),
-  createData("Gingerbread", 356, 16.0, 49, 3.9),
+  createData("1", 356, 16.0, 49, 3.9),
+  createData("2", 356, 16.0, 49, 3.9),
+  createData("3", 356, 16.0, 49, 3.9),
+  createData("4", 356, 16.0, 49, 3.9),
+  createData("5", 356, 16.0, 49, 3.9),
+  createData("6", 356, 16.0, 49, 3.9),
+  createData("7", 356, 16.0, 49, 3.9),
+  createData("8", 356, 16.0, 49, 3.9),
+  createData("9", 356, 16.0, 49, 3.9),
+  createData("10", 356, 16.0, 49, 3.9),
 ];
 
 export const ProductTable = () => {
   return (
     <div>
-      ProductTable
       <TableContainer>
-        <Table sx={{ minWidth: 650 }} aria-label="simple table">
+        <Table sx={{ minWidth: 650 }} size="small" aria-label="simple table">
           <TableHead>
             <TableRow>
               <TableCell>Dessert (100g serving)</TableCell>

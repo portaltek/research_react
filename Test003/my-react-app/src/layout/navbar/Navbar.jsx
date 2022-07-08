@@ -17,7 +17,6 @@ export const Navbar = () => {
   const { config, setConfig } = useContext(AppContext);
   const toggleDisplaySidebar = () => {
     config.sidebar.display = !config.sidebar.display;
-    console.log(" config.sidebar.display:", config.sidebar.display);
     setConfig({
       ...config,
     });

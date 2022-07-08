@@ -6,7 +6,7 @@ import { BrowserRouter } from "react-router-dom";
 import { AppContextProvider } from "./layout/AppContext";
 import { AppPages } from "./pages/AppPages";
 import { Sidebar } from "./layout/sidebar/Sidebar";
-import { Box, Stack, Toolbar, createTheme } from "@mui/material";
+import { Stack } from "@mui/material";
 import { AppLayout } from "./layout/AppLayout";
 
 function App() {
@@ -14,13 +14,9 @@ function App() {
     <AppContextProvider>
       <BrowserRouter>
         <AppLayout>
-          <Stack direction="row" spacing={2} justifyContent="space-between">
-            {/* <Box flex={1} p={1} sx={{ display: "flex" }}> */}
+          <Stack direction="row" spacing={1} justifyContent="space-between">
             <Sidebar />
-            {/* </Box> */}
-            {/* <Box flex={6} p={1}> */}
             <AppPages />
-            {/* </Box> */}
           </Stack>
         </AppLayout>
       </BrowserRouter>
