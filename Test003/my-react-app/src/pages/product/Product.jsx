@@ -7,9 +7,9 @@ export const Product = () => {
   return (
     <>
       <div>Product</div>
-      <ProductTable3 />
+      {/* <ProductTable3 /> */}
       <ProductTable2 />
-      <ProductTable />
+      {/* <ProductTable /> */}
     </>
   );
 };

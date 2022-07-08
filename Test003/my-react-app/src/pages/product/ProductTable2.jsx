@@ -9,6 +9,7 @@ import {
   Paper,
 } from "@mui/material";
 import React from "react";
+import { StyledTableRow } from "../common/StyledTable";
 
 const columns = [
   { id: "name", label: "Name", minWidth: 170 },
@@ -56,13 +57,21 @@ const rows = [
   createData("Russia", "RU", 146793744, 17098246),
   createData("Nigeria", "NG", 200962417, 923768),
   createData("Brazil", "BR", 210147125, 8515767),
+  createData("Brazil1", "BR", 210147125, 8515767),
+  createData("Brazil2", "BR", 210147125, 8515767),
+  createData("Brazil3", "BR", 210147125, 8515767),
+  createData("Brazil4", "BR", 210147125, 8515767),
+  createData("Brazil5", "BR", 210147125, 8515767),
+  createData("Brazil6", "BR", 210147125, 8515767),
+  createData("Brazil7", "BR", 210147125, 8515767),
+  createData("Brazil8", "BR", 210147125, 8515767),
 ];
 
 export const ProductTable2 = () => {
   const [page, setPage] = React.useState(0);
-  const [rowsPerPage, setRowsPerPage] = React.useState(10);
+  const [rowsPerPage, setRowsPerPage] = React.useState(15);
 
-  const handleChangePage = (event, newPage) => {
+  const handleChangePage = (_event, newPage) => {
     setPage(newPage);
   };
 
@@ -94,7 +103,7 @@ export const ProductTable2 = () => {
                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                 .map((row) => {
                   return (
-                    <TableRow
+                    <StyledTableRow
                       hover
                       role="checkbox"
                       tabIndex={-1}
@@ -110,7 +119,7 @@ export const ProductTable2 = () => {
                           </TableCell>
                         );
                       })}
-                    </TableRow>
+                    </StyledTableRow>
                   );
                 })}
             </TableBody>
