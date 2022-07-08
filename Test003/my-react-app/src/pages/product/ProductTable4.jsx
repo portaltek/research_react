@@ -123,7 +123,9 @@ function EnhancedTableHead(props) {
   const createSortHandler = (property) => (event) => {
     onRequestSort(event, property);
   };
-
+  function getOrder() {
+    return order === "desc" ? "sorted descending" : "sorted ascending";
+  }
   return (
     <TableHead>
       <TableRow>
@@ -153,7 +155,7 @@ function EnhancedTableHead(props) {
               {headCell.label}
               {orderBy === headCell.id ? (
                 <Box component="span" sx={visuallyHidden}>
-                  {order === "desc" ? "sorted descending" : "sorted ascending"}
+                  {getOrder()}
                 </Box>
               ) : null}
             </TableSortLabel>
@@ -239,7 +241,7 @@ export default function EnhancedTable() {
   const [dense, setDense] = React.useState(false);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
 
-  const handleRequestSort = (event, property) => {
+  const handleRequestSort = (_event, property) => {
     const isAsc = orderBy === property && order === "asc";
     setOrder(isAsc ? "desc" : "asc");
     setOrderBy(property);
@@ -254,7 +256,7 @@ export default function EnhancedTable() {
     setSelected([]);
   };
 
-  const handleClick = (event, name) => {
+  const handleClick = (_event, name) => {
     const selectedIndex = selected.indexOf(name);
     let newSelected = [];
 
@@ -274,7 +276,7 @@ export default function EnhancedTable() {
     setSelected(newSelected);
   };
 
-  const handleChangePage = (event, newPage) => {
+  const handleChangePage = (_event, newPage) => {
     setPage(newPage);
   };
 
