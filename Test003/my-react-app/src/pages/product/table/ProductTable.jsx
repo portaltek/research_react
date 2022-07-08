@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import Box from "@mui/material/Box";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
@@ -14,7 +14,7 @@ import { rows, getComparator, stableSort } from "./ProductTableUtils";
 import { ProductTableHeader } from "./ProductTableHeader";
 import { ProductTableToolbar } from "./ProductTableToolbar";
 
-export default function ProductTable() {
+export const ProductTable = () => {
   const [order, setOrder] = React.useState("asc");
   const [orderBy, setOrderBy] = React.useState("calories");
   const [selected, setSelected] = React.useState([]);
@@ -164,4 +164,4 @@ export default function ProductTable() {
       />
     </Box>
   );
-}
+};
