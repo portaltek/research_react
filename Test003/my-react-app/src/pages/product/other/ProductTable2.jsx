@@ -9,7 +9,7 @@ import {
   Paper,
 } from "@mui/material";
 import React from "react";
-import { StyledTableRow } from "../common/StyledTable";
+import { StyledTableRow } from "../../common/StyledTable";
 
 const columns = [
   { id: "name", label: "Name", minWidth: 170 },
