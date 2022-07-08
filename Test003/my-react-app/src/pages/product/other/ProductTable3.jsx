@@ -5,7 +5,6 @@ import {
   TableRow,
   TableBody,
   TableCell,
-  TablePagination,
   Paper,
   tableCellClasses,
 } from "@mui/material";
