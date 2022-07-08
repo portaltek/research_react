@@ -5,14 +5,21 @@ import { BrowserRouter } from "react-router-dom";
 
 import { AppLayout } from "./layout/AppLayout";
 import { AppContextProvider } from "./layout/AppContext";
-import { AppRoutes } from "./pages/AppRoutes";
+import { AppPages } from "./pages/AppPages";
+import { Sidebar } from "./layout/sidebar/Sidebar";
+import { Box } from "@mui/material";
 
 function App() {
   return (
     <AppContextProvider>
       <BrowserRouter>
         <AppLayout>
-          <AppRoutes />
+          <Box flex={1} p={2} sx={{ display: "flex" }}>
+            <Sidebar />
+          </Box>
+          <Box flex={4} p={2}>
+            <AppPages />
+          </Box>
         </AppLayout>
       </BrowserRouter>
     </AppContextProvider>

@@ -31,11 +31,11 @@ export default function SidebarList() {
         </ListItemButton>
       </ListItem>
       <ListItem disablePadding>
-        <ListItemButton component="a" href="/Page0">
+        <ListItemButton component="a" href="/product">
           <ListItemIcon>
             <Settings></Settings>
           </ListItemIcon>
-          <ListItemText primary="Page0"></ListItemText>
+          <ListItemText primary="Products"></ListItemText>
         </ListItemButton>
       </ListItem>
       <ListItem disablePadding>

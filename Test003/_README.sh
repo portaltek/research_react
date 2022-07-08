@@ -18,4 +18,7 @@ npm i @mui/material @emotion/react @emotion/styled @mui/icons-material react-rou
 # Master-Detail crud.
 # Unit Test and Light Component Test.
 # Dynamic side menu options rendering.
-# 
+# Fix Profile Menu.
+
+
+<Box flex={1} p={2} sx={{ display: "flex" }}>

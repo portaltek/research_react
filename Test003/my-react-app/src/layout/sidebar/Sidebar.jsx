@@ -11,7 +11,8 @@ export const Sidebar = ({ themeMode, setThemeMode }) => {
   const drawerWidth = config.sidebar.display ? defaultDrawerWidth : 0;
 
   return (
-    <Box flex={1} p={2} sx={{ display: "flex" }}>
+    // <Box flex={1} p={2} sx={{ display: "flex" }}>
+    <>
       <CssBaseline />
       <Drawer
         variant="permanent"
@@ -27,6 +28,6 @@ export const Sidebar = ({ themeMode, setThemeMode }) => {
         <Toolbar />
         <SidebarList themeMode={themeMode} setThemeMode={setThemeMode} />
       </Drawer>
-    </Box>
+    </>
   );
 };

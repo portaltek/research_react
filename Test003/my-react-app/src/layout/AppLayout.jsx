@@ -1,6 +1,5 @@
-import { Box, Stack, createTheme, ThemeProvider, Toolbar } from "@mui/material";
+import { Stack, createTheme, ThemeProvider, Toolbar, Box } from "@mui/material";
 import { Navbar } from "./navbar/Navbar";
-import { Sidebar } from "./sidebar/Sidebar";
 import { useContext } from "react";
 import { AppContext } from "./AppContext";
 
@@ -12,17 +11,14 @@ export const AppLayout = ({ children }) => {
     },
   });
   return (
-    <ThemeProvider
-      theme={darkTheme}
-      bgcolor={"background.default"}
-      color={"text.primary"}
-    >
-      <Navbar />
-      <Toolbar />
-      <Stack direction="row" spacing={2} justifyContent="space-between">
-        <Sidebar />
-        <main>{children}</main>
-      </Stack>
+    <ThemeProvider theme={darkTheme}>
+      <Box bgcolor={"background.default"} color={"text.primary"}>
+        <Navbar />
+        <Toolbar />
+        <Stack direction="row" spacing={2} justifyContent="space-between">
+          <main>{children}</main>
+        </Stack>
+      </Box>
     </ThemeProvider>
   );
 };
