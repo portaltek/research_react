@@ -1,17 +1,16 @@
 import React, { useContext } from "react";
-import { Box, Toolbar, Drawer, CssBaseline } from "@mui/material";
+import { Toolbar, Drawer, CssBaseline } from "@mui/material";
 
 import SidebarList from "./SidebarList";
 import { AppContext } from "../AppContext";
 
 const defaultDrawerWidth = 200; //60
 
-export const Sidebar = ({ themeMode, setThemeMode }) => {
+export const Sidebar = () => {
   const { config } = useContext(AppContext);
   const drawerWidth = config.sidebar.display ? defaultDrawerWidth : 0;
 
   return (
-    // <Box flex={1} p={2} sx={{ display: "flex" }}>
     <>
       <CssBaseline />
       <Drawer
@@ -26,7 +25,7 @@ export const Sidebar = ({ themeMode, setThemeMode }) => {
         }}
       >
         <Toolbar />
-        <SidebarList themeMode={themeMode} setThemeMode={setThemeMode} />
+        <SidebarList />
       </Drawer>
     </>
   );
