@@ -4,10 +4,10 @@ import { useContext } from "react";
 import { AppContext } from "./AppContext";
 
 export const AppLayout = ({ children }) => {
-  const { config } = useContext(AppContext);
+  const { app } = useContext(AppContext);
   const darkTheme = createTheme({
     palette: {
-      mode: config.theme.mode,
+      mode: app.theme.mode,
     },
   });
   return (

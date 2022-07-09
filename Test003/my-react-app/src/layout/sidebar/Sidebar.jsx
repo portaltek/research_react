@@ -7,11 +7,11 @@ import { AppContext } from "../AppContext";
 const defaultDrawerWidth = 200; //60
 
 export const Sidebar = () => {
-  const { config } = useContext(AppContext);
+  const { app } = useContext(AppContext);
 
-  const sidebarVisible = config.sidebar.display ? 1 : 0;
-  const sidebarPadding = config.sidebar.display ? 2 : 0;
-  const sidebarWidth = config.sidebar.display ? defaultDrawerWidth : 0;
+  const sidebarVisible = app.sidebar.display ? 1 : 0;
+  const sidebarPadding = app.sidebar.display ? 2 : 0;
+  const sidebarWidth = app.sidebar.display ? defaultDrawerWidth : 0;
 
   return (
     <Box flex={sidebarVisible} p={sidebarPadding}>

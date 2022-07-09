@@ -12,11 +12,11 @@ import MailIcon from "@mui/icons-material/Mail";
 import { AppContext } from "../AppContext";
 
 export default function SidebarList() {
-  const { config, setConfig } = useContext(AppContext);
+  const { app, setApp } = useContext(AppContext);
   const toggleThemeMode = () => {
-    config.theme.mode = config.theme.mode === "light" ? "dark" : "light";
-    setConfig({
-      ...config,
+    app.theme.mode = app.theme.mode === "light" ? "dark" : "light";
+    setApp({
+      ...app,
     });
   };
 

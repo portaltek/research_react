@@ -14,11 +14,11 @@ import { AppContext } from "../AppContext";
 
 export const Navbar = () => {
   const [openProfileMenu, setOpenProfileMenu] = useState(false);
-  const { config, setConfig } = useContext(AppContext);
+  const { app, setApp } = useContext(AppContext);
   const toggleDisplaySidebar = () => {
-    config.sidebar.display = !config.sidebar.display;
-    setConfig({
-      ...config,
+    app.sidebar.display = !app.sidebar.display;
+    setApp({
+      ...app,
     });
   };
   return (

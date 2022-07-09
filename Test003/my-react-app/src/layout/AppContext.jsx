@@ -1,9 +1,10 @@
 import { createContext, useState } from "react";
 
 export const AppContext = createContext({});
+
 const defaultConfig = {
   theme: {
-    mode: "dark",
+    mode: "light",
   },
   sidebar: {
     display: true,
@@ -11,13 +12,13 @@ const defaultConfig = {
 };
 
 export const AppContextProvider = ({ children }) => {
-  const [config, setConfig] = useState(defaultConfig);
+  const [app, setApp] = useState(defaultConfig);
 
   return (
     <AppContext.Provider
       value={{
-        config,
-        setConfig,
+        app,
+        setApp,
       }}
     >
       {children}
