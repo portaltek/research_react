@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Box from "@mui/material/Box";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
@@ -10,70 +10,59 @@ import Paper from "@mui/material/Paper";
 import Checkbox from "@mui/material/Checkbox";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Switch from "@mui/material/Switch";
-import { rows, getComparator, stableSort } from "./ProductTableUtils";
 import { ProductTableHeader } from "./ProductTableHeader";
 import { ProductTableToolbar } from "./ProductTableToolbar";
+import {
+  getComparator,
+  stableSort,
+  DefaultTableConfig,
+  handleSelectAllClick,
+  handleSortByClick,
+  handleSelectRowClick,
+  calculateEmptyRows,
+  calculateEmptyRowsHeight,
+} from "../../common/table/SortTable";
+import { productTableSampleData } from "./ProductTableSampleData";
 
 export const ProductTable = () => {
-  const [order, setOrder] = React.useState("asc");
-  const [orderBy, setOrderBy] = React.useState("calories");
-  const [selected, setSelected] = React.useState([]);
-  const [page, setPage] = React.useState(0);
-  const [dense, setDense] = React.useState(false);
-  const [rowsPerPage, setRowsPerPage] = React.useState(5);
+  const [table, setTable] = useState({
+    ...DefaultTableConfig,
+    orderBy: "calories",
+    data: productTableSampleData,
+  });
+  const { page, order, orderBy, rowsPerPage, dense, selected, data } = table;
 
-  const handleRequestSort = (_event, property) => {
-    const isAsc = orderBy === property && order === "asc";
-    setOrder(isAsc ? "desc" : "asc");
-    setOrderBy(property);
-  };
+  const handleSortBy = handleSortByClick(table, setTable);
 
-  const handleSelectAllClick = (event) => {
-    if (event.target.checked) {
-      const newSelecteds = rows.map((n) => n.name);
-      setSelected(newSelecteds);
-      return;
-    }
-    setSelected([]);
-  };
+  const handleSelectAll = handleSelectAllClick(table, setTable);
 
-  const handleClick = (_event, name) => {
-    const selectedIndex = selected.indexOf(name);
-    let newSelected = [];
-
-    if (selectedIndex === -1) {
-      newSelected = newSelected.concat(selected, name);
-    } else if (selectedIndex === 0) {
-      newSelected = newSelected.concat(selected.slice(1));
-    } else if (selectedIndex === selected.length - 1) {
-      newSelected = newSelected.concat(selected.slice(0, -1));
-    } else if (selectedIndex > 0) {
-      newSelected = newSelected.concat(
-        selected.slice(0, selectedIndex),
-        selected.slice(selectedIndex + 1)
-      );
-    }
-
-    setSelected(newSelected);
-  };
+  const handleSelectRow = handleSelectRowClick(table, setTable);
 
   const handleChangePage = (_event, newPage) => {
-    setPage(newPage);
+    setTable({
+      ...table,
+      page: newPage,
+    });
   };
 
   const handleChangeRowsPerPage = (event) => {
-    setRowsPerPage(parseInt(event.target.value, 10));
-    setPage(0);
+    setTable({
+      ...table,
+      page: 0,
+      rowsPerPage: parseInt(event.target.value, 10),
+    });
   };
 
   const handleChangeDense = (event) => {
-    setDense(event.target.checked);
+    setTable({
+      ...table,
+      dense: event.target.checked,
+    });
   };
 
-  const isSelected = (name) => selected.indexOf(name) !== -1;
-
-  const emptyRows =
-    page > 0 ? Math.max(0, (1 + page) * rowsPerPage - rows.length) : 0;
+  const isSelectedRow = (name) => selected.indexOf(name) !== -1;
+  const emptyRows = calculateEmptyRows(table);
+  const emptyRowsHeight = calculateEmptyRowsHeight(table);
 
   return (
     <Box sx={{ width: "100%" }}>
@@ -89,23 +78,23 @@ export const ProductTable = () => {
               numSelected={selected.length}
               order={order}
               orderBy={orderBy}
-              onSelectAllClick={handleSelectAllClick}
-              onRequestSort={handleRequestSort}
-              rowCount={rows.length}
+              onSelectAllClick={handleSelectAll}
+              onRequestSort={handleSortBy}
+              rowCount={data.length}
             />
             <TableBody>
               {/* if you don't need to support IE11, you can replace the `stableSort` call with:
                  rows.slice().sort(getComparator(order, orderBy)) */}
-              {stableSort(rows, getComparator(order, orderBy))
+              {stableSort(data, getComparator(order, orderBy))
                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                 .map((row, index) => {
-                  const isItemSelected = isSelected(row.name);
+                  const isItemSelected = isSelectedRow(row.name);
                   const labelId = `enhanced-table-checkbox-${index}`;
 
                   return (
                     <TableRow
                       hover
-                      onClick={(event) => handleClick(event, row.name)}
+                      onClick={(event) => handleSelectRow(event, row.name)}
                       role="checkbox"
                       aria-checked={isItemSelected}
                       tabIndex={-1}
@@ -139,7 +128,7 @@ export const ProductTable = () => {
               {emptyRows > 0 && (
                 <TableRow
                   style={{
-                    height: (dense ? 33 : 53) * emptyRows,
+                    height: emptyRowsHeight,
                   }}
                 >
                   <TableCell colSpan={6} />
@@ -151,7 +140,7 @@ export const ProductTable = () => {
         <TablePagination
           rowsPerPageOptions={[5, 10, 25]}
           component="div"
-          count={rows.length}
+          count={data.length}
           rowsPerPage={rowsPerPage}
           page={page}
           onPageChange={handleChangePage}
