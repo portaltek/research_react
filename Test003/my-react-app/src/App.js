@@ -14,7 +14,7 @@ function App() {
     <AppContextProvider>
       <BrowserRouter>
         <AppLayout>
-          <Stack direction="row" spacing={1} justifyContent="space-between">
+          <Stack direction="row" spacing={0} justifyContent="space-between">
             <Sidebar />
             <AppPages />
           </Stack>

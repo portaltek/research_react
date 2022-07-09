@@ -33,7 +33,8 @@ export const DefaultTableConfig = {
   orderBy: "",
   dense: true,
   page: 0,
-  rowsPerPage: 5,
+  rowsPerPage: 10,
+  rowsPerPageOptions: [10, 20, 50, 100],
   selected: [],
   data: [],
 };

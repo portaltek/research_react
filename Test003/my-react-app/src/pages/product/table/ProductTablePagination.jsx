@@ -2,7 +2,7 @@ import React from "react";
 import { TablePagination } from "@mui/material";
 
 export const ProductTablePagination = ({ table, setTable }) => {
-  const { page, rowsPerPage, data } = table;
+  const { page, rowsPerPage, data, rowsPerPageOptions } = table;
 
   const handleChangePage = (_event, newPage) => {
     setTable({
@@ -21,7 +21,7 @@ export const ProductTablePagination = ({ table, setTable }) => {
 
   return (
     <TablePagination
-      rowsPerPageOptions={[5, 10, 25]}
+      rowsPerPageOptions={rowsPerPageOptions}
       component="div"
       count={data.length}
       rowsPerPage={rowsPerPage}

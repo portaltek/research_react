@@ -1,7 +1,6 @@
-import React, { useContext } from "react";
+import React from "react";
 import { AppBar, Typography, InputBase, IconButton } from "@mui/material";
 import SchoolIcon from "@mui/icons-material/School";
-import MenuIcon from "@mui/icons-material/Menu";
 
 import {
   NavbarBox,
@@ -11,16 +10,9 @@ import {
 } from "./NavbarStyled";
 import { NavbarNotifications } from "./NavbarNotifications";
 import { NavbarUserProfile } from "./NavbarUserProfile";
-import { AppContext } from "../AppContext";
+import { NavbarMenuButton } from "./NavbarMenuButton";
 
 export const Navbar = () => {
-  const { app, setApp } = useContext(AppContext);
-  const toggleDisplaySidebar = () => {
-    app.sidebar.display = !app.sidebar.display;
-    setApp({
-      ...app,
-    });
-  };
   return (
     <AppBar
       position="fixed"
@@ -28,9 +20,7 @@ export const Navbar = () => {
     >
       <NavbarStyledToolbar>
         <NavbarBox>
-          <IconButton component="span">
-            <MenuIcon fontSize="large" onClick={toggleDisplaySidebar} />
-          </IconButton>
+          <NavbarMenuButton />
           <IconButton component="span">
             <SchoolIcon fontSize="Large" />
           </IconButton>
