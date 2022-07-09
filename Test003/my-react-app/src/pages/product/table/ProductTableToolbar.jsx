@@ -1,10 +1,7 @@
-import * as React from "react";
+import React from "react";
+import { Toolbar, Typography, IconButton, Tooltip } from "@mui/material";
 import PropTypes from "prop-types";
 import { alpha } from "@mui/material/styles";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
-import IconButton from "@mui/material/IconButton";
-import Tooltip from "@mui/material/Tooltip";
 import DeleteIcon from "@mui/icons-material/Delete";
 import FilterListIcon from "@mui/icons-material/FilterList";
 

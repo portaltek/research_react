@@ -6,8 +6,9 @@ import {
   ListItemIcon,
   ListItemText,
 } from "@mui/material";
-import { Home, Settings } from "@mui/icons-material";
 import MailIcon from "@mui/icons-material/Mail";
+import SettingsIcon from "@mui/icons-material/Settings";
+import HomeIcon from "@mui/icons-material/Home";
 
 import DarkModeSwitch from "./DarkModeSwitch";
 
@@ -17,7 +18,7 @@ export default function SidebarList() {
       <ListItem disablePadding>
         <ListItemButton component="a" href="/">
           <ListItemIcon>
-            <Home></Home>
+            <HomeIcon></HomeIcon>
           </ListItemIcon>
           <ListItemText primary="Homepage"></ListItemText>
         </ListItemButton>
@@ -25,7 +26,7 @@ export default function SidebarList() {
       <ListItem disablePadding>
         <ListItemButton component="a" href="/product">
           <ListItemIcon>
-            <Settings></Settings>
+            <SettingsIcon></SettingsIcon>
           </ListItemIcon>
           <ListItemText primary="Products"></ListItemText>
         </ListItemButton>

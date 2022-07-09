@@ -1,10 +1,12 @@
-import * as React from "react";
+import React from "react";
 import PropTypes from "prop-types";
-import Box from "@mui/material/Box";
-import TableHead from "@mui/material/TableHead";
-import TableRow from "@mui/material/TableRow";
-import TableSortLabel from "@mui/material/TableSortLabel";
-import Checkbox from "@mui/material/Checkbox";
+import {
+  Box,
+  TableHead,
+  TableRow,
+  TableSortLabel,
+  Checkbox,
+} from "@mui/material";
 import { visuallyHidden } from "@mui/utils";
 import { StyledTableCell } from "../../common/table/StyledTable";
 

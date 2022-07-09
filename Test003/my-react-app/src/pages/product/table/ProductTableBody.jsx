@@ -1,8 +1,5 @@
 import React from "react";
-import TableBody from "@mui/material/TableBody";
-import TableCell from "@mui/material/TableCell";
-import Checkbox from "@mui/material/Checkbox";
-
+import { TableBody, TableCell, Checkbox } from "@mui/material";
 import {
   getComparator,
   stableSort,

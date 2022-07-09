@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Box,
   Avatar,
@@ -10,19 +10,20 @@ import {
 } from "@mui/material";
 import { Person, Logout } from "@mui/icons-material";
 
-export const NavbarUserProfile = (props) => {
+export const NavbarUserProfile = () => {
+  const [openProfileMenu, setOpenProfileMenu] = useState(false);
   return (
     <Box>
       <Avatar
         alt="Remy Sharp"
         src="favicon.ico"
-        onClick={(_e) => props.profileMenu.setOpenProfileMenu(true)}
+        onClick={(_e) => setOpenProfileMenu(true)}
       />
       <Typography variant="span"></Typography>
 
       <Menu
-        open={props.profileMenu.openProfileMenu}
-        onClose={(_e) => props.profileMenu.setOpenProfileMenu(false)}
+        open={openProfileMenu}
+        onClose={(_e) => setOpenProfileMenu(false)}
         anchorOrigin={{ vertical: "top", horizontal: "right" }}
         transformOrigin={{ vertical: "top", horizontal: "right" }}
       >

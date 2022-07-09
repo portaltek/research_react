@@ -1,11 +1,5 @@
 import React, { useState } from "react";
-import Box from "@mui/material/Box";
-import Table from "@mui/material/Table";
-import TableContainer from "@mui/material/TableContainer";
-import Paper from "@mui/material/Paper";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Switch from "@mui/material/Switch";
-
+import { Box, Table, TableContainer, Paper } from "@mui/material";
 import {
   DefaultTableConfig,
   handleSelectAllClick,
@@ -16,6 +10,7 @@ import { ProductTableHeader } from "./ProductTableHeader";
 import { productTableSampleData } from "./ProductTableSampleData";
 import { ProductTableToolbar } from "./ProductTableToolbar";
 import { ProductTablePagination } from "./ProductTablePagination";
+import { ProductTableFooter } from "./ProductTableFooter";
 
 export const ProductTable = () => {
   const [table, setTable] = useState({
@@ -28,13 +23,6 @@ export const ProductTable = () => {
   const handleSortBy = handleSortByClick(table, setTable);
 
   const handleSelectAll = handleSelectAllClick(table, setTable);
-
-  const handleChangeDense = (event) => {
-    setTable({
-      ...table,
-      dense: event.target.checked,
-    });
-  };
 
   return (
     <Box sx={{ width: "100%" }}>
@@ -59,10 +47,7 @@ export const ProductTable = () => {
         </TableContainer>
         <ProductTablePagination {...{ table, setTable }} />
       </Paper>
-      <FormControlLabel
-        control={<Switch checked={dense} onChange={handleChangeDense} />}
-        label="Dense padding"
-      />
+      <ProductTableFooter {...{ table, setTable }} />
     </Box>
   );
 };

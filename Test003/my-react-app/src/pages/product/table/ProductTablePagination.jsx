@@ -1,5 +1,5 @@
 import React from "react";
-import TablePagination from "@mui/material/TablePagination";
+import { TablePagination } from "@mui/material";
 
 export const ProductTablePagination = ({ table, setTable }) => {
   const { page, rowsPerPage, data } = table;
