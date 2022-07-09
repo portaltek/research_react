@@ -96,12 +96,10 @@ export function handleSelectRowClick(table, setTable) {
   };
 }
 
-export function calculateEmptyRows(table) {
-  const { page, rowsPerPage, data } = table;
+export function calculateEmptyRows({ page, rowsPerPage, data }) {
   return page > 0 ? Math.max(0, (1 + page) * rowsPerPage - data.length) : 0;
 }
 
-export function calculateEmptyRowsHeight(table) {
-  const { dense, emptyRows } = table;
+export function calculateEmptyRowsHeight(dense, emptyRows) {
   return (dense ? 33 : 53) * emptyRows;
 }

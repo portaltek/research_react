@@ -32,7 +32,7 @@ export const ProductTableToolbar = (props) => {
           variant="subtitle1"
           component="div"
         >
-          {numSelected} selected
+          {numSelected} Products selected
         </Typography>
       ) : (
         <Typography
@@ -41,7 +41,7 @@ export const ProductTableToolbar = (props) => {
           id="tableTitle"
           component="div"
         >
-          Nutrition
+          Products
         </Typography>
       )}
 

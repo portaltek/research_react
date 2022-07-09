@@ -16,6 +16,9 @@ npm i @mui/material @emotion/react @emotion/styled @mui/icons-material react-rou
 # TODO: 
 # Login, use local store and auto-logout warning.
 # Master-Detail crud.
+# - Create Form
+# - Update Form
+# - Delete Form
 # Unit Test and Light Component Test.
 # Dynamic side menu options rendering.
 # Fix Profile Menu.

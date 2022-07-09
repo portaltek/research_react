@@ -8,7 +8,7 @@ import Checkbox from "@mui/material/Checkbox";
 import { visuallyHidden } from "@mui/utils";
 import { StyledTableCell } from "../../common/table/StyledTable";
 
-const headCells = [
+const headerColumns = [
   {
     id: "name",
     numeric: false,
@@ -41,15 +41,14 @@ const headCells = [
   },
 ];
 
-export const ProductTableHeader = (props) => {
-  const {
-    onSelectAllClick,
-    order,
-    orderBy,
-    numSelected,
-    rowCount,
-    onRequestSort,
-  } = props;
+export const ProductTableHeader = ({
+  onSelectAllClick,
+  order,
+  orderBy,
+  numSelected,
+  rowCount,
+  onRequestSort,
+}) => {
   const createSortHandler = (property) => (event) => {
     onRequestSort(event, property);
   };
@@ -70,7 +69,7 @@ export const ProductTableHeader = (props) => {
             }}
           />
         </StyledTableCell>
-        {headCells.map((headCell) => (
+        {headerColumns.map((headCell) => (
           <StyledTableCell
             key={headCell.id}
             align={headCell.numeric ? "right" : "left"}

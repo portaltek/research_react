@@ -1,28 +1,21 @@
 import React, { useState } from "react";
 import Box from "@mui/material/Box";
 import Table from "@mui/material/Table";
-import TableBody from "@mui/material/TableBody";
-import TableCell from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
-import TablePagination from "@mui/material/TablePagination";
 import Paper from "@mui/material/Paper";
-import Checkbox from "@mui/material/Checkbox";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Switch from "@mui/material/Switch";
-import { ProductTableHeader } from "./ProductTableHeader";
-import { ProductTableToolbar } from "./ProductTableToolbar";
+
 import {
-  getComparator,
-  stableSort,
   DefaultTableConfig,
   handleSelectAllClick,
   handleSortByClick,
-  handleSelectRowClick,
-  calculateEmptyRows,
-  calculateEmptyRowsHeight,
 } from "../../common/table/SortTable";
+import { ProductTableBody } from "./ProductTableBody";
+import { ProductTableHeader } from "./ProductTableHeader";
 import { productTableSampleData } from "./ProductTableSampleData";
-import { StyledTableRow } from "../../common/table/StyledTable";
+import { ProductTableToolbar } from "./ProductTableToolbar";
+import { ProductTablePagination } from "./ProductTablePagination";
 
 export const ProductTable = () => {
   const [table, setTable] = useState({
@@ -30,28 +23,11 @@ export const ProductTable = () => {
     orderBy: "calories",
     data: productTableSampleData,
   });
-  const { page, order, orderBy, rowsPerPage, dense, selected, data } = table;
+  const { order, orderBy, dense, selected, data } = table;
 
   const handleSortBy = handleSortByClick(table, setTable);
 
   const handleSelectAll = handleSelectAllClick(table, setTable);
-
-  const handleSelectRow = handleSelectRowClick(table, setTable);
-
-  const handleChangePage = (_event, newPage) => {
-    setTable({
-      ...table,
-      page: newPage,
-    });
-  };
-
-  const handleChangeRowsPerPage = (event) => {
-    setTable({
-      ...table,
-      page: 0,
-      rowsPerPage: parseInt(event.target.value, 10),
-    });
-  };
 
   const handleChangeDense = (event) => {
     setTable({
@@ -59,10 +35,6 @@ export const ProductTable = () => {
       dense: event.target.checked,
     });
   };
-
-  const isSelectedRow = (name) => selected.indexOf(name) !== -1;
-  const emptyRows = calculateEmptyRows(table);
-  const emptyRowsHeight = calculateEmptyRowsHeight(table);
 
   return (
     <Box sx={{ width: "100%" }}>
@@ -82,70 +54,10 @@ export const ProductTable = () => {
               onRequestSort={handleSortBy}
               rowCount={data.length}
             />
-            <TableBody>
-              {/* if you don't need to support IE11, you can replace the `stableSort` call with:
-                 rows.slice().sort(getComparator(order, orderBy)) */}
-              {stableSort(data, getComparator(order, orderBy))
-                .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-                .map((row, index) => {
-                  const isItemSelected = isSelectedRow(row.name);
-                  const labelId = `enhanced-table-checkbox-${index}`;
-
-                  return (
-                    <StyledTableRow
-                      hover
-                      onClick={(event) => handleSelectRow(event, row.name)}
-                      role="checkbox"
-                      aria-checked={isItemSelected}
-                      tabIndex={-1}
-                      key={row.name}
-                      selected={isItemSelected}
-                    >
-                      <TableCell padding="checkbox">
-                        <Checkbox
-                          color="primary"
-                          checked={isItemSelected}
-                          inputProps={{
-                            "aria-labelledby": labelId,
-                          }}
-                        />
-                      </TableCell>
-                      <TableCell
-                        component="th"
-                        id={labelId}
-                        scope="row"
-                        padding="none"
-                      >
-                        {row.name}
-                      </TableCell>
-                      <TableCell align="right">{row.calories}</TableCell>
-                      <TableCell align="right">{row.fat}</TableCell>
-                      <TableCell align="right">{row.carbs}</TableCell>
-                      <TableCell align="right">{row.protein}</TableCell>
-                    </StyledTableRow>
-                  );
-                })}
-              {emptyRows > 0 && (
-                <StyledTableRow
-                  style={{
-                    height: emptyRowsHeight,
-                  }}
-                >
-                  <TableCell colSpan={6} />
-                </StyledTableRow>
-              )}
-            </TableBody>
+            <ProductTableBody {...{ table, setTable }} />
           </Table>
         </TableContainer>
-        <TablePagination
-          rowsPerPageOptions={[5, 10, 25]}
-          component="div"
-          count={data.length}
-          rowsPerPage={rowsPerPage}
-          page={page}
-          onPageChange={handleChangePage}
-          onRowsPerPageChange={handleChangeRowsPerPage}
-        />
+        <ProductTablePagination {...{ table, setTable }} />
       </Paper>
       <FormControlLabel
         control={<Switch checked={dense} onChange={handleChangeDense} />}
