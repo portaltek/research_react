@@ -1,26 +1,17 @@
-import React, { useContext } from "react";
+import React from "react";
 import {
+  List,
   ListItem,
   ListItemButton,
-  List,
   ListItemIcon,
-  Switch,
   ListItemText,
 } from "@mui/material";
-import { Home, Settings, ModeNight } from "@mui/icons-material";
+import { Home, Settings } from "@mui/icons-material";
 import MailIcon from "@mui/icons-material/Mail";
-import { AppContext, localSave } from "../AppContext";
+
+import DarkModeSwitch from "./DarkModeSwitch";
 
 export default function SidebarList() {
-  const { app, setApp } = useContext(AppContext);
-  const toggleThemeMode = () => {
-    app.theme.mode = app.theme.mode === "light" ? "dark" : "light";
-    setApp({
-      ...app,
-    });
-    localSave("app", app);
-  };
-
   return (
     <List>
       <ListItem disablePadding>
@@ -40,11 +31,8 @@ export default function SidebarList() {
         </ListItemButton>
       </ListItem>
       <ListItem disablePadding>
-        <ListItemButton component="a" href="#home">
-          <ListItemIcon>
-            <ModeNight></ModeNight>
-          </ListItemIcon>
-          <Switch onChange={toggleThemeMode} />
+        <ListItemButton component="a" href="#">
+          <DarkModeSwitch />
         </ListItemButton>
       </ListItem>
       {["Inbox", "Starred", "Send email", "Drafts"].map((text, _index) => (

@@ -5,7 +5,6 @@ import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
 import TablePagination from "@mui/material/TablePagination";
-import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import Checkbox from "@mui/material/Checkbox";
 import FormControlLabel from "@mui/material/FormControlLabel";
@@ -23,6 +22,7 @@ import {
   calculateEmptyRowsHeight,
 } from "../../common/table/SortTable";
 import { productTableSampleData } from "./ProductTableSampleData";
+import { StyledTableRow } from "../../common/table/StyledTable";
 
 export const ProductTable = () => {
   const [table, setTable] = useState({
@@ -92,7 +92,7 @@ export const ProductTable = () => {
                   const labelId = `enhanced-table-checkbox-${index}`;
 
                   return (
-                    <TableRow
+                    <StyledTableRow
                       hover
                       onClick={(event) => handleSelectRow(event, row.name)}
                       role="checkbox"
@@ -122,17 +122,17 @@ export const ProductTable = () => {
                       <TableCell align="right">{row.fat}</TableCell>
                       <TableCell align="right">{row.carbs}</TableCell>
                       <TableCell align="right">{row.protein}</TableCell>
-                    </TableRow>
+                    </StyledTableRow>
                   );
                 })}
               {emptyRows > 0 && (
-                <TableRow
+                <StyledTableRow
                   style={{
                     height: emptyRowsHeight,
                   }}
                 >
                   <TableCell colSpan={6} />
-                </TableRow>
+                </StyledTableRow>
               )}
             </TableBody>
           </Table>
