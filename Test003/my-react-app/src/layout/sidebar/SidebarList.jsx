@@ -9,7 +9,7 @@ import {
 } from "@mui/material";
 import { Home, Settings, ModeNight } from "@mui/icons-material";
 import MailIcon from "@mui/icons-material/Mail";
-import { AppContext } from "../AppContext";
+import { AppContext, localSave } from "../AppContext";
 
 export default function SidebarList() {
   const { app, setApp } = useContext(AppContext);
@@ -18,6 +18,7 @@ export default function SidebarList() {
     setApp({
       ...app,
     });
+    localSave("app", app);
   };
 
   return (
@@ -43,7 +44,7 @@ export default function SidebarList() {
           <ListItemIcon>
             <ModeNight></ModeNight>
           </ListItemIcon>
-          <Switch onChange={() => toggleThemeMode()} />
+          <Switch onChange={toggleThemeMode} />
         </ListItemButton>
       </ListItem>
       {["Inbox", "Starred", "Send email", "Drafts"].map((text, _index) => (
