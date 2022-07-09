@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
-import { AppBar, Typography, InputBase } from "@mui/material";
+import { AppBar, Typography, InputBase, IconButton } from "@mui/material";
 import SchoolIcon from "@mui/icons-material/School";
+import MenuIcon from "@mui/icons-material/Menu";
 
 import {
   NavbarBox,
@@ -27,7 +28,12 @@ export const Navbar = () => {
     >
       <NavbarStyledToolbar>
         <NavbarBox>
-          <SchoolIcon onClick={toggleDisplaySidebar} />
+          <IconButton component="span">
+            <MenuIcon fontSize="large" onClick={toggleDisplaySidebar} />
+          </IconButton>
+          <IconButton component="span">
+            <SchoolIcon fontSize="Large" />
+          </IconButton>
           <NavbarBoxSM>
             <Typography variant="h6">MUI</Typography>
           </NavbarBoxSM>
