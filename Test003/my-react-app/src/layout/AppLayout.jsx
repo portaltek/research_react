@@ -62,7 +62,6 @@ export const AppLayout = ({ children }) => {
     <ThemeProvider theme={theme}>
       <Box bgcolor={"background.default"} color={"text.primary"}>
         <Navbar />
-        <Toolbar />
         <main>{children}</main>
       </Box>
     </ThemeProvider>

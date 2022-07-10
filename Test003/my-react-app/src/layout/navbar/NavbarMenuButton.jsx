@@ -14,8 +14,15 @@ export const NavbarMenuButton = () => {
     });
   };
   return (
-    <IconButton component="span" onClick={toggleDisplaySidebar}>
-      <MenuIcon fontSize="large" />
+    <IconButton
+      size="large"
+      edge="start"
+      color="inherit"
+      aria-label="menu"
+      sx={{ mr: 2 }}
+      onClick={toggleDisplaySidebar}
+    >
+      <MenuIcon />
     </IconButton>
   );
 };

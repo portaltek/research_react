@@ -26,7 +26,7 @@ export const Sidebar = () => {
           },
         }}
       >
-        <Toolbar />
+        <Toolbar variant="dense" />
         <SidebarList />
       </Drawer>
     </Box>
