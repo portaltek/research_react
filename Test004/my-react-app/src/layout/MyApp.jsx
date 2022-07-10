@@ -34,8 +34,6 @@ export const MyApp = (props) => {
     setMobileOpen(!mobileOpen);
   };
 
-  const drawerContent = SideMenuDrawerContent;
-
   const container =
     window !== undefined ? () => window().document.body : undefined;
 
@@ -51,7 +49,6 @@ export const MyApp = (props) => {
       <SideMenu
         {...{
           open,
-          drawerContent,
           handleDrawerToggle,
           container,
           mobileOpen,
@@ -105,7 +102,6 @@ const TopBar = ({ handleMobileDrawerToggle, handleDrawerToggle }) => {
 
 const SideMenu = ({
   open,
-  drawerContent,
   handleDrawerToggle,
   container,
   mobileOpen,
@@ -117,7 +113,6 @@ const SideMenu = ({
       <SideMenuDrawer
         {...{
           open,
-          drawerContent,
           handleDrawerToggle,
         }}
       />
@@ -126,46 +121,47 @@ const SideMenu = ({
           container,
           mobileOpen,
           handleMobileDrawerToggle,
-          drawerContent,
         }}
       />
     </Box>
   );
 };
 
-const SideMenuDrawerContent = (
-  <>
-    <Toolbar variant="dense" />
-    <Divider />
-    <List>
-      {["Inbox", "Starred", "Send email", "Drafts"].map((text, _index) => (
-        <ListItem key={text} disablePadding>
-          <ListItemButton>
-            <ListItemIcon>
-              <MailIcon />
-            </ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItemButton>
-        </ListItem>
-      ))}
-    </List>
-    <Divider />
-    <List>
-      {["All mail", "Trash", "Spam"].map((text, _index) => (
-        <ListItem key={text} disablePadding>
-          <ListItemButton>
-            <ListItemIcon>
-              <InboxIcon />
-            </ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItemButton>
-        </ListItem>
-      ))}
-    </List>
-  </>
-);
+const SideMenuDrawerContent = () => {
+  return (
+    <>
+      <Toolbar variant="dense" />
+      <Divider />
+      <List>
+        {["Inbox", "Starred", "Send email", "Drafts"].map((text, _index) => (
+          <ListItem key={text} disablePadding>
+            <ListItemButton>
+              <ListItemIcon>
+                <MailIcon />
+              </ListItemIcon>
+              <ListItemText primary={text} />
+            </ListItemButton>
+          </ListItem>
+        ))}
+      </List>
+      <Divider />
+      <List>
+        {["All mail", "Trash", "Spam"].map((text, _index) => (
+          <ListItem key={text} disablePadding>
+            <ListItemButton>
+              <ListItemIcon>
+                <InboxIcon />
+              </ListItemIcon>
+              <ListItemText primary={text} />
+            </ListItemButton>
+          </ListItem>
+        ))}
+      </List>
+    </>
+  );
+};
 
-const SideMenuDrawer = ({ drawerContent, open, handleDrawerToggle }) => {
+const SideMenuDrawer = ({ open, handleDrawerToggle }) => {
   const displayDrawer = open ? "block" : "none";
   return (
     <Drawer
@@ -178,7 +174,7 @@ const SideMenuDrawer = ({ drawerContent, open, handleDrawerToggle }) => {
         [`& .MuiDrawer-paper`]: { width: drawerWidth, boxSizing: "border-box" },
       }}
     >
-      {drawerContent}
+      <SideMenuDrawerContent />
     </Drawer>
   );
 };
@@ -187,7 +183,6 @@ const SideMenuDrawerMobile = ({
   container,
   mobileOpen,
   handleMobileDrawerToggle,
-  drawerContent,
 }) => {
   return (
     <Drawer
@@ -206,7 +201,7 @@ const SideMenuDrawerMobile = ({
         },
       }}
     >
-      {drawerContent}
+      <SideMenuDrawerContent />
     </Drawer>
   );
 };
