@@ -1,9 +1,9 @@
-import { MyApp } from "./layout/MyApp";
+import { AppLayout } from "./layout/AppLayout";
 
 function App() {
   return (
     <>
-      <MyApp />
+      <AppLayout />
     </>
   );
 }

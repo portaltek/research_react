@@ -21,7 +21,7 @@ import * as React from "react";
 const drawerWidth = 180;
 const drawerWidthMobile = 240;
 
-export const MyApp = (props) => {
+export const AppLayout = (props) => {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const [open, setOpen] = React.useState(true);
@@ -60,7 +60,7 @@ export const MyApp = (props) => {
   );
 };
 
-MyApp.propTypes = {
+AppLayout.propTypes = {
   window: PropTypes.func,
 };
 
