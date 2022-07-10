@@ -19,3 +19,10 @@ mkdir src/layout;
 rm src/logo.svg public/logo192.png public/logo512.png
 rm src/App.js
 echo "function App() {  return <>APP</>; } export default App;" >  src/App.js
+ //zIndex: (theme) => theme.zIndex.drawer + 1,
+
+        position="fixed"
+        sx={{
+          width: { sm: `calc(100% - ${drawerWidth}px)` },
+          ml: { sm: `${drawerWidth}px` },
+        }}

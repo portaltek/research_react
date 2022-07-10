@@ -1,14 +1,14 @@
 import Navbar from "./layout/navbar/Navbar";
 import { Box, CssBaseline } from "@mui/material";
-import Sidemenu from "./layout/sidemenu/Sidemenu";
+import { SideMenu } from "./layout/sidemenu/Sidemenu";
 
 function App() {
   return (
-    <Box sx={{ display: "flex" }}>
-      <Navbar />
-      <CssBaseline />
-      <Sidemenu />
-    </Box>
+    <>
+      {/* <Navbar /> */}
+      {/* <CssBaseline /> */}
+      <SideMenu />
+    </>
   );
 }
 export default App;
