@@ -1,10 +1,9 @@
 import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
 import PropTypes from "prop-types";
 import * as React from "react";
-import { sideMenuWidth, SideMenu } from "./SideMenu";
+import { ContentPages } from "./ContentPages";
+import { SideMenu } from "./SideMenu";
 import { TopBar } from "./TopBar";
 
 export const AppLayout = (props) => {
@@ -41,35 +40,11 @@ export const AppLayout = (props) => {
           handleMobileDrawerToggle,
         }}
       />
-      <MainBody />
+      <ContentPages />
     </Box>
   );
 };
 
 AppLayout.propTypes = {
   window: PropTypes.func,
-};
-
-const MainBody = () => {
-  return (
-    <Box
-      component="main"
-      sx={{
-        flexGrow: 1,
-        p: 1,
-        width: { sm: `calc(100% - ${sideMenuWidth}px)` },
-      }}
-    >
-      <Toolbar variant="dense" />
-      <Typography paragraph>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do Lorem
-        ipsum dolor sit amet, consectetur adipiscing elit, sed do Lorem ipsum
-        dolor sit amet, consectetur adipiscing elit, sed do Lorem ipsum dolor
-        sit amet, consectetur adipiscing elit, sed do Lorem ipsum dolor sit
-        amet, consectetur adipiscing elit, sed do Lorem ipsum dolor sit amet,
-        consectetur adipiscing elit, sed do Lorem ipsum dolor sit amet,
-        consectetur adipiscing elit, sed do
-      </Typography>
-    </Box>
-  );
 };
