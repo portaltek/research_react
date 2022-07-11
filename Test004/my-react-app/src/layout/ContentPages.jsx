@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Toolbar, Typography } from "@mui/material";
+import { Box, Toolbar } from "@mui/material";
 import { sideMenuWidth } from "./SideMenu";
 import { Route, Routes } from "react-router-dom";
 import { Product } from "../pages/product/Product";
