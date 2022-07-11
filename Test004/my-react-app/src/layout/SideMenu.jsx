@@ -9,6 +9,7 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import Toolbar from "@mui/material/Toolbar";
+import HomeIcon from "@mui/icons-material/Home";
 
 export const sideMenuWidth = 180;
 export const sideMenuWidthMobile = 240;
@@ -44,32 +45,33 @@ const SideMenuDrawerContent = () => {
   return (
     <>
       <Toolbar variant="dense" />
-      <Divider />
       <List>
-        {["Inbox", "Starred", "Send email", "Drafts"].map((text, _index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                <MailIcon />
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItemButton>
-          </ListItem>
-        ))}
+        <ListItem disablePadding>
+          <ListItemButton component="a" href="/">
+            <ListItemIcon>
+              <HomeIcon></HomeIcon>
+            </ListItemIcon>
+            <ListItemText primary="Homepage"></ListItemText>
+          </ListItemButton>
+        </ListItem>
+        <ListItem disablePadding>
+          <ListItemButton component="a" href="/product">
+            <ListItemIcon>
+              <HomeIcon></HomeIcon>
+            </ListItemIcon>
+            <ListItemText primary="Products"></ListItemText>
+          </ListItemButton>
+        </ListItem>
+        <ListItem disablePadding>
+          <ListItemButton component="a" href="/user">
+            <ListItemIcon>
+              <HomeIcon></HomeIcon>
+            </ListItemIcon>
+            <ListItemText primary="Users"></ListItemText>
+          </ListItemButton>
+        </ListItem>
       </List>
       <Divider />
-      <List>
-        {["All mail", "Trash", "Spam"].map((text, _index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                <InboxIcon />
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
     </>
   );
 };
