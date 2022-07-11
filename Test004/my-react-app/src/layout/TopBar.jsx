@@ -70,7 +70,6 @@ export const TopBar = ({ handleMobileDrawerToggle, handleDrawerToggle }) => {
           <TopBarProfile {...{ handleProfileMenuOpen, handleMobileMenuOpen }} />
         </Toolbar>
       </AppBar>
-      <TopBarProfileMenu {...{ anchorEl, isMenuOpen, handleMenuClose }} />
       <TobBarProfileMenuMobile
         {...{
           mobileMoreAnchorEl,
@@ -79,6 +78,7 @@ export const TopBar = ({ handleMobileDrawerToggle, handleDrawerToggle }) => {
           handleProfileMenuOpen,
         }}
       />
+      <TopBarProfileMenu {...{ anchorEl, isMenuOpen, handleMenuClose }} />
     </>
   );
 };
