@@ -8,6 +8,7 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import Toolbar from "@mui/material/Toolbar";
 import HomeIcon from "@mui/icons-material/Home";
+import ThemeModeButtons from "./theme/ThemeModeButtons";
 
 export const sideMenuWidth = 180;
 export const sideMenuWidthMobile = 240;
@@ -20,6 +21,7 @@ export const SideMenu = ({
   handleMobileDrawerToggle,
 }) => {
   const width = open ? sideMenuWidth : 0;
+
   return (
     <Box component="nav" sx={{ width: { sm: width }, flexShrink: { sm: 0 } }}>
       <SideMenuDrawer
@@ -43,6 +45,10 @@ const SideMenuDrawerContent = () => {
   return (
     <>
       <Toolbar variant="dense" />
+      <Box p={1}>
+        <ThemeModeButtons />
+      </Box>
+
       <List>
         <ListItem disablePadding>
           <ListItemButton component="a" href="/">
@@ -76,6 +82,7 @@ const SideMenuDrawerContent = () => {
 
 const SideMenuDrawer = ({ open, handleDrawerToggle }) => {
   const displayDrawer = open ? "block" : "none";
+
   return (
     <Drawer
       variant="permanent"
