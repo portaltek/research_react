@@ -1,6 +1,5 @@
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import LightModeIcon from "@mui/icons-material/LightMode";
-import Brightness4Icon from "@mui/icons-material/Brightness4";
 import { Box } from "@mui/material";
 import Button from "@mui/material/Button";
 import ButtonGroup from "@mui/material/ButtonGroup";
@@ -27,9 +26,6 @@ export default function ThemeModeButtons() {
         <Button>
           <LightModeIcon onClick={() => setThemeMode("light")} />
         </Button>
-        {/* <Button>
-          <Brightness4Icon onClick={() => setThemeMode("auto")} />
-        </Button> */}
       </ButtonGroup>
     </Box>
   );
